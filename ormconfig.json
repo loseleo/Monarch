@@ -1,0 +1,61 @@
+[{
+   "name":"data",
+   "type": "mysql",
+   "host": "127.0.0.1",
+   "port": 3306,
+   "username": "root",
+   "password": "root",
+   "database": "data_db",
+   "synchronize": true,
+   "entityPrefix":"o_",
+   "logging": false,
+   "cache":true,
+   "extra": {
+      "connectionLimit":  10
+    },
+   "entities": [
+      "src/data/entity/data/*.ts"
+   ],
+   "migrations": [
+      "src/data/migration/data/*.ts"
+   ],
+   "subscribers": [
+      "src/data/subscriber/data/*.ts"
+   ],
+   "cli": {
+      "entitiesDir": "src/data/entity/data",
+      "migrationsDir": "src/data/migration/data",
+      "subscribersDir": "src/data/subscriber/data"
+   }
+},
+{
+   "name": "log",
+   "type": "mysql",
+   "host": "127.0.0.1",
+   "port": 3306,
+   "username": "root",
+   "password": "root",
+   "database": "log_db",
+   "synchronize": true,
+   "entityPrefix":"o_",
+   "logging": false,
+   "cache":true,
+   "extra": {
+      "connectionLimit":  10
+    },
+    "entities": [
+      "src/data/entity/log/*.ts"
+   ],
+   "migrations": [
+      "src/data/migration/log/*.ts"
+   ],
+   "subscribers": [
+      "src/data/subscriber/log/*.ts"
+   ],
+   "cli": {
+      "entitiesDir": "src/data/entity/stat",
+      "migrationsDir": "src/data/migration/stat",
+      "subscribersDir": "src/data/subscriber/stat"
+   }
+}
+]
